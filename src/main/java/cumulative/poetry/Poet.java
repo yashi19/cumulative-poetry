@@ -3,8 +3,8 @@
  */
 package cumulative.poetry;
 
-public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+public class Poet {
+    public String recite() {
+        return "";
     }
 }
