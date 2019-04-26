@@ -97,9 +97,9 @@ This is the horse and the hound and the horn that belonged to
 
 3. It is expected that all code is unit tested. If you don't know about unit tests, don't worry - here is a friendly [blog](https://martinfowler.com/bliki/UnitTest.html) by Martin Fowler talking about unit testing. And you can take a look at  [junit's official guide](https://junit.org/junit5/docs/current/user-guide/) to efficiently write tests with same.
 
-3. Its expected you write all code using git as your version control system pushed to a private remote repository like Bitbucket and you share access with your mentors.
+4. Its expected you write all code using git as your version control system pushed to a private remote repository like Bitbucket and you share access with your mentors.
 
-4. Please use a convention for your git messages, like the one mentioned [here](https://chris.beams.io/posts/git-commit/). Also, try to keep your commits small with one logical change in each commit.
+5. Please use a convention for your git messages, like the one mentioned [here](https://chris.beams.io/posts/git-commit/). Also, try to keep your commits small with one logical change in each commit.
 
 ## Expectation from release 2
 
