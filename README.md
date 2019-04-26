@@ -101,6 +101,8 @@ This is the horse and the hound and the horn that belonged to
 
 5. Please use a convention for your git messages, like the one mentioned [here](https://chris.beams.io/posts/git-commit/). Also, try to keep your commits small with one logical change in each commit.
 
+6. We already have included `gradle` as the build tool. You can learn about it from [official documentation](https://gradle.org/guides/#getting-started). However be careful with the time you spend on it, as its quite exhaustive. It might be better to connect with people in your office who already worked with or know about gradle. Anyhow, `./gradlew test` should get you started for running tests. 
+
 ## Expectation from release 2
 
 The poetry class wants each line to echo twice, if the flag is specified. Else retain the default behaviors. The purpose is that the poetry starts reading more like a song.
