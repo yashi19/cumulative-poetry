@@ -1,6 +1,6 @@
 # Cumulative Poetry
 
-We are building a product that will be used in poetry classes. We target a poetry of a form called as cumulative poetry.
+We are building a product that will be used in poetry classes. We target a poetry of a form called as cumulative poetry. The functionality is broken down into releases and its recommended that you approach the problem incrementally. 
 
 ## Release 1 Expectations
 
