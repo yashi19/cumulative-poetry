@@ -191,7 +191,7 @@ Flags supported
 - `--reveal-for-day for_which_day [--random] [--seed seed_value] [--echo]` : Reveals the tale up till that day, optionally in a random order with an optional echo or both, as specified
 - `--recite [--random] [--seed seed_value] [--echo]` : Recites the whole tale with a day wise breakage, optionally in a random order with an optional echo or both, as specified
 
-Program run with the same seed values should generate same poetry.
+Program run with the same seed values should generate same poetry. If you don't know what's a seed value, take a look at this [wiki page](https://en.wikipedia.org/wiki/Random_seed) or this [quora answer](https://www.quora.com/What-is-seed-in-random-number-generation). In our case, seed values shall help us test randomness in our code.
 
 Example usage: (*Note seed values are just examples, your results might differ*)
 
