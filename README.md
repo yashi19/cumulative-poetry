@@ -47,7 +47,8 @@ ___
 
 **Technical needs**
 
-1. You are expected to deliver a jar that supports above mentioned functionality, with the following interface:
+1. You are expected to commit the source code in a private github repository shared with your trainers.
+2. There should be a documented way of generating a jar that supports above mentioned functionality, with the following behaviour:
 
 Flags supported 
 - `--reveal-for-day for_which_day` : Reveals the tale up till that day
@@ -94,7 +95,7 @@ This is the horse and the hound and the horn that belonged to
 
 ```
 
-2. It is expected that all code is unit tested. If you don't know about unit tests, don't worry - here is a friendly [blog](https://martinfowler.com/bliki/UnitTest.html) by Martin Fowler talking about unit testing. And you can take a look at  [junit's official guide](https://junit.org/junit5/docs/current/user-guide/) to efficiently write tests with same.
+3. It is expected that all code is unit tested. If you don't know about unit tests, don't worry - here is a friendly [blog](https://martinfowler.com/bliki/UnitTest.html) by Martin Fowler talking about unit testing. And you can take a look at  [junit's official guide](https://junit.org/junit5/docs/current/user-guide/) to efficiently write tests with same.
 
 3. Its expected you write all code using git as your version control system pushed to a private remote repository like Bitbucket and you share access with your mentors.
 
