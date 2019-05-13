@@ -31,6 +31,42 @@ public class AppConstants {
             "    the malt that lay in \n" +
             "    the house that Jack built.";
 
+    public static String RECITE_ACTUAL_VALUE = "Day 1 -\n" +
+            "This is the house that Jack built.\n" +
+            "Day 2 -\n" +
+            "This is the malt that lay in the house that Jack built.\n" +
+            "Day 3 -\n" +
+            "This is the rat that ate\n" +
+            "Day 4 -\n" +
+            "This is the cat that killed the rat\n" +
+            "Day 5 -\n" +
+            "This is the dog taht was worried\n" +
+            "Day 6 -\n" +
+            "That cow with the crumpled horn that tossed\n" +
+            "Day 7 -\n" +
+            "That maiden all forlorn that milked\n" +
+            "Day 8 -\n" +
+            "The man all tattered and torn that kissed\n" +
+            "Day 9 -\n" +
+            "The priest all shaven and shorn that married\n" +
+            "Day 10 -\n" +
+            "The rooster that crowed in the morn that woke\n" +
+            "Day 11 -\n" +
+            "The farmer sowing his corn that kept\n" +
+            "Day 12 -\n" +
+            "This is the horse and the hound and the horn that belonged to\n" +
+            "    the farmer sowing his corn that kept\n" +
+            "    the rooster that crowed in the morn that woke\n" +
+            "    the priest all shaven and shorn that married\n" +
+            "    the man all tattered and torn that kissed\n" +
+            "    the maiden all forlorn that milked \n" +
+            "    that cow with the crumpled horn that tossed\n" +
+            "    the dog that worried \n" +
+            "    the cat that killed\n" +
+            "    the rat that ate\n" +
+            "    the malt that lay in \n" +
+            "    the house that Jack built.\n";
+
 
 
 }

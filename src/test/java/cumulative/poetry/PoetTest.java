@@ -3,15 +3,28 @@
  */
 package cumulative.poetry;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PoetTest {
+
+    private Poet poet = null;
+
+    @Before
+    public void setUp() throws Exception {
+        this.poet = new Poet();
+    }
+
     @Test public void shouldTestForRevealPoetryDayWise() {
-        Poet poet = new Poet();
         String actualValue = poet.revealPoetryDayWise(1);
         String expectedValue = AppConstants.DAY1_POETRY;
         assertEquals(expectedValue,actualValue);
     }
 
+    @Test public void shouldTestForRecite() {
+        String actualValue = poet.recite();
+        String expectedValue = AppConstants.RECITE_ACTUAL_VALUE;
+        assertEquals(expectedValue,actualValue);
+    }
 }
