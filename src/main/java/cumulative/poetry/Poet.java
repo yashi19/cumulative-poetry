@@ -3,8 +3,36 @@
  */
 package cumulative.poetry;
 
+import java.util.Map;
+
 public class Poet {
+
+    private Map<Integer,Poetry> mapOfPoetries;
+
+    Poet(){
+        mapOfPoetries = new InputHandler().getPoetries();
+    }
+
     public String recite() {
-        return "";
+        StringBuilder poetryMessage = new StringBuilder();
+        mapOfPoetries.entrySet().stream().sorted(Map.Entry.comparingByKey()) .forEach((entry)->{
+            poetryMessage.append("Day "+entry.getKey()+" -\n");
+            poetryMessage.append(entry.getValue().getPoetryMessage()+"\n");
+
+        });
+
+        return poetryMessage.toString();
+    }
+
+    public String revealPoetryDayWise(int day){
+        String poetryMessage= "";
+        if( day <= 0 ){
+            return  AppConstants.INVALID_DAY_ARGUMENT;
+        }
+        Poetry poetry =  mapOfPoetries.get(day);
+        if( poetry != null ){
+            poetryMessage = poetry.getPoetryMessage();
+        }
+        return poetryMessage;
     }
 }

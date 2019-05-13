@@ -7,8 +7,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PoetTest {
-    @Test public void shouldSaySomething() {
+    @Test public void shouldTestForRevealPoetryDayWise() {
         Poet poet = new Poet();
-        assertFalse("Poet should say something, but said nothing",poet.recite().isEmpty());
+        String actualValue = poet.revealPoetryDayWise(1);
+        String expectedValue = AppConstants.DAY1_POETRY;
+        assertEquals(expectedValue,actualValue);
     }
+
 }
