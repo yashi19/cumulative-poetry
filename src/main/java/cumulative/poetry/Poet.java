@@ -15,24 +15,25 @@ public class Poet {
 
     public String recite() {
         StringBuilder poetryMessage = new StringBuilder();
-        mapOfPoetries.entrySet().stream().sorted(Map.Entry.comparingByKey()) .forEach((entry)->{
-            poetryMessage.append("Day "+entry.getKey()+" -\n");
-            poetryMessage.append(entry.getValue().getPoetryMessage()+"\n");
-
-        });
+        for(int day = 1; day <= mapOfPoetries.size(); day++){
+                poetryMessage.append("Day "+day+ " - \n");
+                poetryMessage.append(revealPoetryDayWise(day));
+                poetryMessage.append('\n');
+        }
 
         return poetryMessage.toString();
     }
 
     public String revealPoetryDayWise(int day){
-        String poetryMessage= "";
+        StringBuilder poetryMessage= new StringBuilder();
         if( day <= 0 ){
             return  AppConstants.INVALID_DAY_ARGUMENT;
         }
-        Poetry poetry =  mapOfPoetries.get(day);
-        if( poetry != null ){
-            poetryMessage = poetry.getPoetryMessage();
+        poetryMessage.append(AppConstants.THIS_IS_STRING);
+        for(int i = day ; i > 0 ; i--){
+            poetryMessage.append(mapOfPoetries.get(i).getPoetryMessage());
+            poetryMessage.append('\n');
         }
-        return poetryMessage;
+        return poetryMessage.toString();
     }
 }
