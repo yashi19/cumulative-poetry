@@ -1,19 +1,21 @@
-package cumulative.poetry;
+package cumulative.poetry.common;
+
+import cumulative.poetry.models.Poetry;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class InputHandler {
 
-    private Map<Integer,Poetry> mapOfPoetries;
+    private Map<Integer, Poetry> mapOfPoetries;
 
-    InputHandler(){
+    public InputHandler(){
         mapOfPoetries= new HashMap<>();
     }
 
     public  Map<Integer,Poetry> getPoetries(){
 
-        this.mapOfPoetries.put(1,new Poetry(1,AppConstants.DAY1_POETRY));
+        this.mapOfPoetries.put(1,new Poetry(1, AppConstants.DAY1_POETRY));
         this.mapOfPoetries.put(2,new Poetry(2,AppConstants.DAY2_POETRY));
         this.mapOfPoetries.put(3,new Poetry(3,AppConstants.DAY3_POETRY));
         this.mapOfPoetries.put(4,new Poetry(4,AppConstants.DAY4_POETRY));

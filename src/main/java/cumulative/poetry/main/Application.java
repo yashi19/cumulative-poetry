@@ -1,4 +1,7 @@
-package cumulative.poetry;
+package cumulative.poetry.main;
+
+import cumulative.poetry.common.AppConstants;
+import cumulative.poetry.Poet;
 
 public class Application {
 

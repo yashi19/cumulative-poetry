@@ -3,13 +3,17 @@
  */
 package cumulative.poetry;
 
+import cumulative.poetry.common.AppConstants;
+import cumulative.poetry.common.InputHandler;
+import cumulative.poetry.models.Poetry;
+
 import java.util.Map;
 
 public class Poet {
 
-    private Map<Integer,Poetry> mapOfPoetries;
+    private Map<Integer, Poetry> mapOfPoetries;
 
-    Poet(){
+    public Poet(){
         mapOfPoetries = new InputHandler().getPoetries();
     }
 

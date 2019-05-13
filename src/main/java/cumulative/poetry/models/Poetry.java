@@ -1,4 +1,4 @@
-package cumulative.poetry;
+package cumulative.poetry.models;
 
 public class Poetry {
 
