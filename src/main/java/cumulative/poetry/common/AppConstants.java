@@ -6,6 +6,8 @@ public class AppConstants {
     public static String OPTION_RECITE = "--recite";
     public static String INVALID_ARGUMENT = "Invalid arguments";
     public static String INVALID_DAY_ARGUMENT = "Invalid Day passed as an argument";
+    public static int MINIMUM_ARGUMENTS = 1;
+    public static int MAXIMUM_ARGUMENTS = 2;
 
     public static String THIS_IS_STRING = "This is ";
 
@@ -23,6 +25,7 @@ public class AppConstants {
     public static String DAY12_POETRY = "the horse and the hound and the horn that belonged to";
 
 
+    // This constant is used just in testing. That holds the actual value the recite method should return.
     public static String RECITE_ACTUAL_VALUE = "Day 1 - \n" +
             "This is the house that Jack built.\n" +
             "\n" +

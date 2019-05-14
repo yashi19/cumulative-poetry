@@ -19,7 +19,11 @@ public class PoetTest {
 
     @Test public void shouldTestForRevealPoetryDayWise() {
         String actualValue = poet.revealPoetryDayWise(1);
-        String expectedValue = AppConstants.DAY1_POETRY;
+        String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n";
+        assertEquals(expectedValue,actualValue);
+
+         actualValue = poet.revealPoetryDayWise(2);
+         expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n";
         assertEquals(expectedValue,actualValue);
     }
 
