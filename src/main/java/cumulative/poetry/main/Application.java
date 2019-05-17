@@ -2,6 +2,7 @@ package cumulative.poetry.main;
 
 import cumulative.poetry.common.AppConstants;
 import cumulative.poetry.Poet;
+import cumulative.poetry.common.PoetUtils;
 
 public class Application {
 
@@ -20,7 +21,7 @@ public class Application {
             String poetryMessage = "";
             Poet poet = new Poet();
             if(option.equals(AppConstants.OPTION_REVEAL_FOR_DAY)){
-                 poetryMessage = poet.revealPoetryDayWise(day);
+                 poetryMessage = PoetUtils.revealPoetryDayWise(poet.getPoetries(),day);
             } else if(option.equals(AppConstants.OPTION_RECITE)){
                  poetryMessage = poet.recite();
             }

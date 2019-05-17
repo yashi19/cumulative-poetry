@@ -4,6 +4,7 @@
 package cumulative.poetry;
 
 import cumulative.poetry.common.AppConstants;
+import cumulative.poetry.common.PoetUtils;
 import cumulative.poetry.models.Poetry;
 
 import java.util.ArrayList;
@@ -30,27 +31,19 @@ public class Poet {
         this.poetries.add(new Poetry(12, AppConstants.DAY12_POETRY));
     }
 
+    public List<Poetry> getPoetries(){
+        return poetries;
+    }
+
 
     public String recite() {
         StringBuilder poetryMessage = new StringBuilder();
         for(int day = 1; day <= poetries.size(); day++){
                 poetryMessage.append("Day "+day+ " - \n");
-                poetryMessage.append(revealPoetryDayWise(day));
+                poetryMessage.append(PoetUtils.revealPoetryDayWise(poetries,day));
                 poetryMessage.append('\n');
         }
         return poetryMessage.toString();
     }
 
-    public String revealPoetryDayWise(int day){
-        StringBuilder poetryMessage= new StringBuilder();
-        if( day < AppConstants.MINIMUM_DAY ){
-            return  AppConstants.INVALID_DAY_ARGUMENT;
-        }
-        poetryMessage.append(AppConstants.THIS_IS_STRING);
-        for(int i = day-1 ; i >= 0 ; i--){
-            poetryMessage.append(poetries.get(i).getPoetryMessage());
-            poetryMessage.append('\n');
-        }
-        return poetryMessage.toString();
-    }
 }
