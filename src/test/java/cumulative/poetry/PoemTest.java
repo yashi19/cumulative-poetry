@@ -5,19 +5,13 @@ package cumulative.poetry;
 
 import cumulative.poetry.common.AppConstants;
 import cumulative.poetry.models.Poem;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class PoemTest {
 
-    private Poem poem = null;
-
-    @Before
-    public void setUp() throws Exception {
-        Poem poem = new Poem();
-    }
+    private Poem poem = new Poem();
 
     @Test public void shouldTestForRevealPoetryDayWise() {
         String actualValue = poem.revealPoetryDayWise(1);
@@ -26,6 +20,16 @@ public class PoemTest {
 
          actualValue = poem.revealPoetryDayWise(2);
          expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n";
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test public void shouldTestForRevealPoetryDayWiseWithEcho() {
+        String actualValue = poem.revealPoetryDayWiseWithEcho(1);
+        String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n" + AppConstants.DAY1_POETRY + "\n";
+        assertEquals(expectedValue,actualValue);
+
+         actualValue = poem.revealPoetryDayWiseWithEcho(2);
+         expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n" + AppConstants.DAY1_POETRY +"\n" ;
         assertEquals(expectedValue,actualValue);
     }
 

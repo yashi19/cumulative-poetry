@@ -3,7 +3,6 @@
  */
 package cumulative.poetry;
 
-import cumulative.poetry.common.AppConstants;
 import cumulative.poetry.models.Poem;
 import org.junit.Before;
 import org.junit.Test;
@@ -128,4 +127,6 @@ public class PoetTest {
         String expectedValue = RECITE_ACTUAL_VALUE;
         assertEquals(expectedValue,actualValue);
     }
+
+
 }
