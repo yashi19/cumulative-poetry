@@ -29,28 +29,17 @@ public class Poem {
         return poetries;
     }
 
-    public  String revealPoetryDayWise(int day){
+    public  String revealPoetryDayWise(int day, boolean echo){
         StringBuilder poetryMessage= new StringBuilder();
         if( day < AppConstants.MINIMUM_DAY ){
             return  AppConstants.INVALID_DAY_ARGUMENT;
         }
         poetryMessage.append(AppConstants.THIS_IS_STRING);
         for(int i = day-1 ; i >= 0 ; i--){
-            poetryMessage.append(this.poetries.get(i).getPoetryMessage());
-            poetryMessage.append('\n');
-        }
-        return poetryMessage.toString();
-    }
-
-    public  String revealPoetryDayWiseWithEcho(int day){
-        StringBuilder poetryMessage= new StringBuilder();
-        if( day < AppConstants.MINIMUM_DAY ){
-            return  AppConstants.INVALID_DAY_ARGUMENT;
-        }
-        poetryMessage.append(AppConstants.THIS_IS_STRING);
-        for(int i = day-1 ; i >= 0 ; i--){
-            poetryMessage.append(this.poetries.get(i).getPoetryMessage() + '\n');
-            poetryMessage.append(this.poetries.get(i).getPoetryMessage() + '\n');
+            poetryMessage.append(this.poetries.get(i).getPoetryMessage()+'\n');
+            if(echo){
+                poetryMessage.append(this.poetries.get(i).getPoetryMessage() + '\n');
+            }
         }
         return poetryMessage.toString();
     }

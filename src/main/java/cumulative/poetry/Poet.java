@@ -17,24 +17,13 @@ public class Poet {
         this.poem = poem;
     }
 
-    public String recite() {
+    public String recite(boolean echo) {
         StringBuilder poetryMessage = new StringBuilder();
         List<Poetry> poetries = poem.getPoetries();
         for(int day = 1; day <= poetries.size(); day++){
                 poetryMessage.append("Day "+day+ " - \n");
-                poetryMessage.append(poem.revealPoetryDayWise(day));
+                poetryMessage.append(poem.revealPoetryDayWise(day,echo));
                 poetryMessage.append('\n');
-        }
-        return poetryMessage.toString();
-    }
-
-    public String reciteWithEcho() {
-        StringBuilder poetryMessage = new StringBuilder();
-        List<Poetry> poetries = poem.getPoetries();
-        for(int day = 1; day <= poetries.size(); day++){
-            poetryMessage.append("Day "+day+ " - \n");
-            poetryMessage.append(poem.revealPoetryDayWiseWithEcho(day));
-            poetryMessage.append('\n');
         }
         return poetryMessage.toString();
     }

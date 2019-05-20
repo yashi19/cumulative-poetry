@@ -123,7 +123,7 @@ public class PoetTest {
     }
 
     @Test public void shouldTestForRecite() {
-        String actualValue = poet.recite();
+        String actualValue = poet.recite(false);
         String expectedValue = RECITE_ACTUAL_VALUE;
         assertEquals(expectedValue,actualValue);
     }

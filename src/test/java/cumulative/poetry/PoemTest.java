@@ -14,21 +14,21 @@ public class PoemTest {
     private Poem poem = new Poem();
 
     @Test public void shouldTestForRevealPoetryDayWise() {
-        String actualValue = poem.revealPoetryDayWise(1);
+        String actualValue = poem.revealPoetryDayWise(1,false);
         String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n";
         assertEquals(expectedValue,actualValue);
 
-         actualValue = poem.revealPoetryDayWise(2);
+         actualValue = poem.revealPoetryDayWise(2,false);
          expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n";
         assertEquals(expectedValue,actualValue);
     }
 
     @Test public void shouldTestForRevealPoetryDayWiseWithEcho() {
-        String actualValue = poem.revealPoetryDayWiseWithEcho(1);
+        String actualValue = poem.revealPoetryDayWise(1,true);
         String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n" + AppConstants.DAY1_POETRY + "\n";
         assertEquals(expectedValue,actualValue);
 
-         actualValue = poem.revealPoetryDayWiseWithEcho(2);
+         actualValue = poem.revealPoetryDayWise(2,true);
          expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n" + AppConstants.DAY1_POETRY +"\n" ;
         assertEquals(expectedValue,actualValue);
     }
