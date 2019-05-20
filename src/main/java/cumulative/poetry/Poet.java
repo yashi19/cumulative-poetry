@@ -27,4 +27,15 @@ public class Poet {
         }
         return poetryMessage.toString();
     }
+
+    public String reciteWithEcho() {
+        StringBuilder poetryMessage = new StringBuilder();
+        List<Poetry> poetries = poem.getPoetries();
+        for(int day = 1; day <= poetries.size(); day++){
+            poetryMessage.append("Day "+day+ " - \n");
+            poetryMessage.append(poem.revealPoetryDayWiseWithEcho(day));
+            poetryMessage.append('\n');
+        }
+        return poetryMessage.toString();
+    }
 }

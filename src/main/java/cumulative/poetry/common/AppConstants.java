@@ -3,11 +3,12 @@ package cumulative.poetry.common;
 public class AppConstants {
 
     public static String OPTION_REVEAL_FOR_DAY = "--reveal-for-day";
+    public static String OPTION_ECHO= "--echo";
     public static String OPTION_RECITE = "--recite";
     public static String INVALID_ARGUMENT = "Invalid arguments";
     public static String INVALID_DAY_ARGUMENT = "Invalid Day passed as an argument";
     public static int MINIMUM_ARGUMENTS = 1;
-    public static int MAXIMUM_ARGUMENTS = 2;
+    public static int MAXIMUM_ARGUMENTS = 3;
     public static int MINIMUM_DAY = 1;
 
     public static String THIS_IS_STRING = "This is ";
