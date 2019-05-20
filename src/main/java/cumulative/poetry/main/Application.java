@@ -1,8 +1,8 @@
 package cumulative.poetry.main;
 
-import cumulative.poetry.common.AppConstants;
 import cumulative.poetry.Poet;
-import cumulative.poetry.common.PoetUtils;
+import cumulative.poetry.common.AppConstants;
+import cumulative.poetry.models.Poem;
 
 public class Application {
 
@@ -19,9 +19,10 @@ public class Application {
                 day = Integer.parseInt(args[1]);
             }
             String poetryMessage = "";
-            Poet poet = new Poet();
+            Poem poem = new Poem();
+            Poet poet = new Poet(poem);
             if(option.equals(AppConstants.OPTION_REVEAL_FOR_DAY)){
-                 poetryMessage = PoetUtils.revealPoetryDayWise(poet.getPoetries(),day);
+                 poetryMessage = poem.revealPoetryDayWise(day);
             } else if(option.equals(AppConstants.OPTION_RECITE)){
                  poetryMessage = poet.recite();
             }

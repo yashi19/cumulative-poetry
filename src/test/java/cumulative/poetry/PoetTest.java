@@ -4,10 +4,11 @@
 package cumulative.poetry;
 
 import cumulative.poetry.common.AppConstants;
-import cumulative.poetry.common.PoetUtils;
+import cumulative.poetry.models.Poem;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class PoetTest {
 
@@ -118,22 +119,13 @@ public class PoetTest {
 
     @Before
     public void setUp() throws Exception {
-        this.poet = new Poet();
-    }
-
-    @Test public void shouldTestForRevealPoetryDayWise() {
-        String actualValue = PoetUtils.revealPoetryDayWise(poet.getPoetries(),1);
-        String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n";
-        assertEquals(expectedValue,actualValue);
-
-         actualValue = PoetUtils.revealPoetryDayWise(poet.getPoetries(),2);
-         expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n";
-        assertEquals(expectedValue,actualValue);
+        Poem poem = new Poem();
+        this.poet = new Poet(poem);
     }
 
     @Test public void shouldTestForRecite() {
         String actualValue = poet.recite();
-        String expectedValue = AppConstants.RECITE_ACTUAL_VALUE;
+        String expectedValue = RECITE_ACTUAL_VALUE;
         assertEquals(expectedValue,actualValue);
     }
 }
