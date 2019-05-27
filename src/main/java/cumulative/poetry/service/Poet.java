@@ -3,8 +3,6 @@
  */
 package cumulative.poetry.service;
 
-import cumulative.poetry.models.Poetry;
-
 import java.util.List;
 
 
@@ -18,7 +16,7 @@ public class Poet implements IPoet {
 
     public String recite() {
         StringBuilder poetryMessage = new StringBuilder();
-        List<Poetry> poetries = poem.getPoetries();
+        List<String> poetries = poem.getPoetries();
         for(int day = 1; day <= poetries.size(); day++){
                 poetryMessage.append("Day "+day+ " - \n");
                 poetryMessage.append(poem.revealPoetryDayWise(day));
