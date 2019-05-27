@@ -3,7 +3,9 @@
  */
 package cumulative.poetry;
 
+import cumulative.poetry.models.ArgsDTO;
 import cumulative.poetry.models.Poem;
+import cumulative.poetry.service.Poet;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -119,11 +121,13 @@ public class PoetTest {
     @Before
     public void setUp() throws Exception {
         Poem poem = new Poem();
-        this.poet = new Poet(poem);
+        ArgsDTO argsDTO = new ArgsDTO();
+        argsDTO.setReciteOptionSelected(true);
+        this.poet = new Poet(poem,argsDTO);
     }
 
     @Test public void shouldTestForRecite() {
-        String actualValue = poet.recite(false);
+        String actualValue = poet.recite();
         String expectedValue = RECITE_ACTUAL_VALUE;
         assertEquals(expectedValue,actualValue);
     }
