@@ -7,7 +7,7 @@ import cumulative.poetry.models.Poetry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Poem {
+public class Poem implements IPoem{
 
     private List<Poetry> poetries;
     private ArgsDTO argsDTO;
