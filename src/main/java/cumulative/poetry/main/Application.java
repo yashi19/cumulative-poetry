@@ -4,7 +4,7 @@ import cumulative.poetry.service.Poet;
 import cumulative.poetry.common.AppConstants;
 import cumulative.poetry.common.Parser;
 import cumulative.poetry.models.ArgsDTO;
-import cumulative.poetry.models.Poem;
+import cumulative.poetry.service.Poem;
 
 public class Application {
 
@@ -15,14 +15,14 @@ public class Application {
         } else {
 
             ArgsDTO argsDTO = Parser.parseArguments(args);
-            Poem poem = new Poem();
-            Poet poet = new Poet(poem, argsDTO);
+            Poem poem = new Poem(argsDTO);
+            Poet poet = new Poet(poem);
             String poetryMessage = "";
             if (argsDTO.isReciteOptionSelected()){
                 poetryMessage = poet.recite();
             }
             else if (argsDTO.isRevealOptionSelected()){
-                poetryMessage = poem.revealPoetryDayWise(argsDTO.getDay(),argsDTO.isEchoSelected());
+                poetryMessage = poem.revealPoetryDayWise(argsDTO.getDay());
             }
             System.out.println(poetryMessage);
         }

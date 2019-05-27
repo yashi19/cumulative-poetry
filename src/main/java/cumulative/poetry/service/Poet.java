@@ -3,21 +3,17 @@
  */
 package cumulative.poetry.service;
 
-import cumulative.poetry.models.ArgsDTO;
-import cumulative.poetry.models.Poem;
 import cumulative.poetry.models.Poetry;
 
 import java.util.List;
 
 
-public class Poet implements IPoem{
+public class Poet implements IPoet {
 
     private Poem poem;
-    private ArgsDTO argsDTO;
 
-    public Poet(Poem poem,ArgsDTO argsDTO) {
+    public Poet(Poem poem) {
         this.poem = poem;
-        this.argsDTO = argsDTO;
     }
 
     public String recite() {
@@ -25,7 +21,7 @@ public class Poet implements IPoem{
         List<Poetry> poetries = poem.getPoetries();
         for(int day = 1; day <= poetries.size(); day++){
                 poetryMessage.append("Day "+day+ " - \n");
-                poetryMessage.append(poem.revealPoetryDayWise(day,argsDTO.isEchoSelected()));
+                poetryMessage.append(poem.revealPoetryDayWise(day));
                 poetryMessage.append('\n');
         }
         return poetryMessage.toString();

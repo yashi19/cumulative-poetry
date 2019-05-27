@@ -1,6 +1,8 @@
-package cumulative.poetry.models;
+package cumulative.poetry.service;
 
 import cumulative.poetry.common.AppConstants;
+import cumulative.poetry.models.ArgsDTO;
+import cumulative.poetry.models.Poetry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +10,10 @@ import java.util.List;
 public class Poem {
 
     private List<Poetry> poetries;
+    private ArgsDTO argsDTO;
 
-    public Poem(){
+    public Poem(ArgsDTO argsDTO){
+        this.argsDTO = argsDTO;
         this.poetries = new ArrayList<>();
         this.poetries.add(new Poetry(1, AppConstants.DAY1_POETRY));
         this.poetries.add(new Poetry(2, AppConstants.DAY2_POETRY));
@@ -29,7 +33,11 @@ public class Poem {
         return poetries;
     }
 
-    public  String revealPoetryDayWise(int day, boolean echo){
+    public ArgsDTO getArgsDTO(){
+        return this.argsDTO;
+    }
+
+    public  String revealPoetryDayWise(int day){
         StringBuilder poetryMessage= new StringBuilder();
         if( day < AppConstants.MINIMUM_DAY ){
             return  AppConstants.INVALID_DAY_ARGUMENT;
@@ -37,7 +45,7 @@ public class Poem {
         poetryMessage.append(AppConstants.THIS_IS_STRING);
         for(int i = day-1 ; i >= 0 ; i--){
             poetryMessage.append(this.poetries.get(i).getPoetryMessage()+'\n');
-            if(echo){
+            if(argsDTO.isEchoSelected()){
                 poetryMessage.append(this.poetries.get(i).getPoetryMessage() + '\n');
             }
         }

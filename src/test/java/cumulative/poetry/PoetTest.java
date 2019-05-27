@@ -4,7 +4,7 @@
 package cumulative.poetry;
 
 import cumulative.poetry.models.ArgsDTO;
-import cumulative.poetry.models.Poem;
+import cumulative.poetry.service.Poem;
 import cumulative.poetry.service.Poet;
 import org.junit.Before;
 import org.junit.Test;
@@ -120,10 +120,10 @@ public class PoetTest {
 
     @Before
     public void setUp() throws Exception {
-        Poem poem = new Poem();
         ArgsDTO argsDTO = new ArgsDTO();
         argsDTO.setReciteOptionSelected(true);
-        this.poet = new Poet(poem,argsDTO);
+        Poem poem = new Poem(argsDTO);
+        this.poet = new Poet(poem);
     }
 
     @Test public void shouldTestForRecite() {
