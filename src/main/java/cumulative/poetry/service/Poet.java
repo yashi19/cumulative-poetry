@@ -3,15 +3,25 @@
  */
 package cumulative.poetry.service;
 
+import cumulative.poetry.common.AppConstants;
+import cumulative.poetry.common.PoetUtils;
+import cumulative.poetry.models.ArgsDTO;
+
 import java.util.List;
 
 
 public class Poet implements IPoet {
 
     private Poem poem;
+    private ArgsDTO argsDTO;
 
-    public Poet(Poem poem) {
+    public Poet(Poem poem,ArgsDTO argsDTO) {
+        this.argsDTO = argsDTO;
         this.poem = poem;
+    }
+
+    public ArgsDTO getArgsDTO(){
+        return this.argsDTO;
     }
 
     public String recite() {
@@ -19,8 +29,23 @@ public class Poet implements IPoet {
         List<String> poetries = poem.getPoetries();
         for(int day = 1; day <= poetries.size(); day++){
                 poetryMessage.append("Day "+day+ " - \n");
-                poetryMessage.append(poem.revealPoetryDayWise(day));
+                poetryMessage.append(revealPoetryDayWise(day));
                 poetryMessage.append('\n');
+        }
+        return poetryMessage.toString();
+    }
+
+    public  String revealPoetryDayWise(int day){
+        StringBuilder poetryMessage= new StringBuilder();
+        if( day < AppConstants.MINIMUM_DAY ){
+            return  AppConstants.INVALID_DAY_ARGUMENT;
+        }
+        poetryMessage.append(AppConstants.THIS_IS_STRING);
+        for(int i = day-1 ; i >= 0 ; i--){
+            poetryMessage.append(this.poem.getPoetries().get(i)+'\n');
+            if(argsDTO.isEchoSelected()){
+                poetryMessage.append(PoetUtils.echoPoetry(this.poem.getPoetries(),i));
+            }
         }
         return poetryMessage.toString();
     }

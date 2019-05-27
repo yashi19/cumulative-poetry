@@ -3,6 +3,7 @@
  */
 package cumulative.poetry;
 
+import cumulative.poetry.common.AppConstants;
 import cumulative.poetry.models.ArgsDTO;
 import cumulative.poetry.service.Poem;
 import cumulative.poetry.service.Poet;
@@ -122,8 +123,8 @@ public class PoetTest {
     public void setUp() throws Exception {
         ArgsDTO argsDTO = new ArgsDTO();
         argsDTO.setReciteOptionSelected(true);
-        Poem poem = new Poem(argsDTO);
-        this.poet = new Poet(poem);
+        Poem poem = new Poem();
+        this.poet = new Poet(poem,argsDTO);
     }
 
     @Test public void shouldTestForRecite() {
@@ -131,6 +132,29 @@ public class PoetTest {
         String expectedValue = RECITE_ACTUAL_VALUE;
         assertEquals(expectedValue,actualValue);
     }
+
+
+    @Test public void shouldTestForRevealPoetryDayWise() {
+        String actualValue = poet.revealPoetryDayWise(1);
+        String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n";
+        assertEquals(expectedValue,actualValue);
+
+        actualValue = poet.revealPoetryDayWise(2);
+        expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n";
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test public void shouldTestForRevealPoetryDayWiseWithEcho() {
+        poet.getArgsDTO().setEchoSelected(true);
+        String actualValue = poet.revealPoetryDayWise(1);
+        String expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY1_POETRY + "\n" + AppConstants.DAY1_POETRY + "\n";
+        assertEquals(expectedValue,actualValue);
+
+        actualValue = poet.revealPoetryDayWise(2);
+        expectedValue = AppConstants.THIS_IS_STRING + AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY2_POETRY +"\n" +AppConstants.DAY1_POETRY + "\n" + AppConstants.DAY1_POETRY +"\n" ;
+        assertEquals(expectedValue,actualValue);
+    }
+
 
 
 }

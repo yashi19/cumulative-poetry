@@ -15,14 +15,14 @@ public class Application {
         } else {
 
             ArgsDTO argsDTO = Parser.parseArguments(args);
-            Poem poem = new Poem(argsDTO);
-            Poet poet = new Poet(poem);
+            Poem poem = new Poem();
+            Poet poet = new Poet(poem,argsDTO);
             String poetryMessage = "";
             if (argsDTO.isReciteOptionSelected()){
                 poetryMessage = poet.recite();
             }
             else if (argsDTO.isRevealOptionSelected()){
-                poetryMessage = poem.revealPoetryDayWise(argsDTO.getDay());
+                poetryMessage = poet.revealPoetryDayWise(argsDTO.getDay());
             }
             System.out.println(poetryMessage);
         }
